@@ -1,0 +1,22 @@
+.formSectionLogin {
+  gap: 24px;
+  padding: 20px 20px;
+  height: 100%;
+}
+
+.authBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.registerLink {
+  align-self: center;
+  color: var(--color-accent-pressed);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}

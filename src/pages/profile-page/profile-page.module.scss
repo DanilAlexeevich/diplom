@@ -1,0 +1,97 @@
+.main {
+  padding: 40px 20px;
+  background-color: var(--color-bg, #f8f9fa);
+}
+
+.container {
+  max-width: 620px;
+}
+
+.title {
+  text-align: left;
+  font-size: var(--font-size-h1);
+  padding-left: 20px;
+  color: var(--color-text-primary, #222);
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border-radius: 16px;
+  padding: 50px 40px;
+  text-align: start;
+}
+
+.avatarWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f0f0f0;
+}
+
+.avatarEditLabel {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: var(--color-accent, #007bff);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 3px solid white;
+  font-size: 18px;
+
+  &:hover {
+    background: var(--color-accent-pressed, #0056b3);
+    transform: scale(1.08);
+  }
+}
+
+.avatarInput {
+  display: none;
+}
+
+.name {
+  font-size: var(--font-size-h1);
+  margin-bottom: 6px;
+  color: var(--text-primary, #222);
+}
+
+.email {
+  font-size: 1.1rem;
+  color: var(--text-secondary, #666);
+  padding-top: 20px;
+  text-align: left;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.logoutButton {
+  width: 80%;
+  background-color: var(--color-alarm);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  
+  &:hover {
+    background-color: #c82333;
+  }
+}

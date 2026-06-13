@@ -1,0 +1,156 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 36px;
+  background-color: var(--color-surface);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.center {
+  flex: 1;
+}
+
+.searchIinput {
+  width: 100%;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navigation {
+  display: flex;
+  gap: 24px;
+  padding-left: 30px;
+}
+
+.navigationList {
+  text-decoration: none;
+}
+
+.link {
+  flex: 1;
+  color: var(--color-text-primary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.profileContainer {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.headerLogin {
+  justify-content: space-between;
+}
+
+.mobileArrow {
+  display: none;
+}
+
+@media (width <= 480px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "logo cart login"
+      "search search search";
+    align-items: center;
+    gap: 12px 16px;
+    padding: 12px 16px;
+  }
+
+  .left {
+    grid-area: logo;
+    gap: 0;
+
+    // Скрываем навигацию
+    nav { display: none; }
+  }
+
+  .center {
+    grid-area: search;
+  }
+
+  .right {
+    display: contents; // Распускаем flex-контейнер, дети идут в grid напрямую
+    gap: 0;
+  }
+
+  // CartIcon и кнопки позиционируем через отдельные классы-обёртки
+  // Корзина — вторая колонка
+  .cartArea {
+    grid-area: cart;
+    display: flex;
+    align-items: center;
+  }
+
+  // Кнопки авторизации — третья колонка
+  .authArea {
+    grid-area: login;
+    display: flex;
+    align-items: center;
+  }
+
+  // Скрываем кнопку "Зарегистрироваться"
+  .buttonContainer {
+    button:last-child { display: none; }
+
+    // Уменьшаем кнопку "Войти"
+    button:first-child {
+      height: 36px;
+      padding: 6px 14px;
+      font-size: 13px;
+    }
+  }
+
+  // Если залогинен — скрываем имя, оставляем только аватарку
+  .profileContainer {
+    a { display: none; }
+  }
+
+  .desktopText {
+    display: none;
+  }
+
+  .mobileArrow {
+    display: block;
+  }
+
+  .mobileArrowBtn {
+    background-color: transparent;
+    width: 50px;
+  }
+}

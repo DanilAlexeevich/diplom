@@ -1,0 +1,136 @@
+.page {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  align-items: flex-start;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  button {
+    padding: 8px 20px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: var(--color-accent-pressed);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &.active {
+      background: var(--color-accent);
+      color: white;
+      border-color: var(--color-accent);
+    }
+  }
+}
+
+.filterToggle {
+  display: none;
+}
+
+.sortWrapper {
+  position: relative;
+}
+
+.sortToggle {
+  background: none;
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: var(--radius-primary);
+  padding: 8px 14px;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  background-color: var(--color-surface);
+
+  &:hover {
+    border-color: var(--color-accent);
+  }
+}
+
+.sortDropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 50;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: var(--radius-primary);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    padding: 10px 16px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--color-text-primary);
+
+    &:hover {
+      background-color: var(--color-surface-secondary, #f5f5f5);
+    }
+
+    &:last-child {
+      color: var(--color-accent);
+    }
+  }
+}
+
+@media (width <= 480px) {
+  .page {
+    padding: 12px;
+  }
+
+  .filterToggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 1px solid var(--color-border, #ddd);
+    border-radius: var(--radius-primary);
+    padding: 8px 14px;
+    font-size: 14px;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    background-color: var(--color-surface);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}

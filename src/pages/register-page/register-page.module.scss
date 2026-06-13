@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px 20px;
+}
+
+.title {
+  font-family: var(--font-family-other);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-h2);
+  color: var(--color-text-primary);
+  margin: 0 0 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.passwordField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  appearance: none;
+}
+
+.error {
+  color: #c62828;
+  font-size: var(--font-size-caption);
+}
+
+.loginLink {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  color: var(--color-accent);
+  font-size: var(--font-size-caption);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

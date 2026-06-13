@@ -1,0 +1,139 @@
+/* Chrome, Safari, Edge */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+/* Edge Chromium */
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none !important;
+}
+
+/* Иногда помогает для Chromium */
+input[type="password"]::-webkit-password-toggle-button {
+  display: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-primary);
+  background: var(--color-surface);
+  padding: 20px;
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: 0.02em;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-disabled);
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 320px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.passwordField {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.submitButton {
+  width: 100%;
+}
+
+.onboarding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  border-radius: var(--radius-primary);
+  padding: 80px 60px;
+  background: var(--color-surface);
+}
+
+.onboardingImage {
+  width: 300px;
+  height: 300px;
+}
+
+.onboardingText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 414px;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.onboardingTitle {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  letter-spacing: -0.011em;
+}
+
+.onboardingSubtitle {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-h4);
+  letter-spacing: 0.02em;
+}
