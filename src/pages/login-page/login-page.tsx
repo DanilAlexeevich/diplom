@@ -17,13 +17,9 @@ import styles from "./login-page.module.scss";
 
 import {
   Button,
-  IconButton,
   InputBaseContainerUI,
   InputUI,
 } from "@/components/ui";
-
-import eyeIcon from "@/assets/icons/eye.svg";
-import eyeSlashIcon from "@/assets/icons/eye-slash.svg";
 
 import type { LocationState } from "@/types/location";
 
@@ -90,7 +86,6 @@ const validateForm = (values: FormValues): FormErrors => {
 };
 
 export default function LoginPage() {
-  const [showPassword, setShowPassword] = useState(false);
   const [authError, setAuthError] = useState("");
   const [formValues, setFormValues] = useState<FormValues>({
     email: "",
@@ -101,10 +96,6 @@ export default function LoginPage() {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const location = useLocation();
-
-  const togglePassword = () => {
-    setShowPassword((prev) => !prev);
-  };
 
   const handleInputChange =
     (field: FieldName) => (event: ChangeEvent<HTMLInputElement>) => {
@@ -256,7 +247,6 @@ export default function LoginPage() {
                   <InputUI
                     id="password"
                     name="password"
-                    type={showPassword ? "text" : "password"}
                     placeholder="Введите ваш пароль"
                     value={formValues.password}
                     onChange={handleInputChange("password")}

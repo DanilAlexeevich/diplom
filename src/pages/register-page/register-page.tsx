@@ -20,12 +20,9 @@ import googleIcon from "@/assets/icons/logo/google.svg";
 
 import {
   Button,
-  IconButton,
   InputBaseContainerUI,
   InputUI,
 } from "@/components/ui";
-import eyeIcon from "@/assets/icons/eye.svg";
-import eyeSlashIcon from "@/assets/icons/eye-slash.svg";
 
 type FormValues = {
   email: string;
@@ -49,7 +46,6 @@ const validateField = (field: FieldName, value: string): string | undefined => {
 };
 
 export default function RegisterPage() {
-  const [showPassword, setShowPassword] = useState(false);
   const [formValues, setFormValues] = useState<FormValues>({
     email: "",
     password: "",
@@ -192,7 +188,6 @@ export default function RegisterPage() {
                 <InputUI
                   id="password"
                   name="password"
-                  type={showPassword ? "text" : "password"}
                   placeholder="Придумайте пароль"
                   value={formValues.password}
                   onChange={handleInputChange("password")}
