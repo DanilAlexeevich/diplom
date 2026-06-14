@@ -188,7 +188,9 @@ export default function RegisterPage() {
                 error={errors.password || authError}
                 hint="Не менее 6 символов"
               >
-                <div className={authStyles.passwordField}>
+                <div className={authStyles.passwordField}
+                  onClick={() => document.getElementById('password')?.focus()}
+                >
                   <InputUI
                     id="password"
                     name="password"
@@ -197,7 +199,6 @@ export default function RegisterPage() {
                     value={formValues.password}
                     onChange={handleInputChange("password")}
                     onBlur={handleBlur("password")}
-                    className={authStyles.input}
                   />
                   <IconButton
                     type="button"
