@@ -50,7 +50,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <article className={styles.card}>
-      <div className={styles.imageWrapper}>
+      <div className={styles.imageWrapper} onClick={() => setIsModalOpen(true)}>
         {resolvedImage ? (
           <img src={resolvedImage} alt={name} className={styles.image} />
         ) : (
@@ -59,12 +59,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {category && <span className={styles.category}>{category}</span>}
       </div>
 
-      <div className={styles.body}>
+      <div className={styles.body} onClick={() => setIsModalOpen(true)}>
         <h3 className={styles.name}>{name}</h3>
         {description && <p className={styles.description}>{description}</p>}
       </div>
 
-      <div className={styles.actions}>
+      <div className={styles.actions} onClick={() => setIsModalOpen(true)}>
         <span className={styles.price}>{formatPrice(price)}</span>
         <span className={`${styles.status} ${styles[status]}`}>
           {STATUS_LABEL[status]}

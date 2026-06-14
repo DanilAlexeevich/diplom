@@ -25,28 +25,28 @@ const location = useLocation();
     <div className={styles.linkSection}>
       <ul className={`${styles.linkList} ${styles.styledLinkList}`}>
         <li>
-          <MenuLink label="О проекте" href="#" />
+          <MenuLink label="О проекте" href="/about" />
         </li>
         <li>
-          <MenuLink label="Каталог" href="#" />
-        </li>
-      </ul>
-
-      <ul className={styles.linkList}>
-        <li>
-          <MenuLink label="Контакты" href="#" />
-        </li>
-        <li>
-          <MenuLink label="Блог" href="#" />
+          <MenuLink label="Каталог" href="/" />
         </li>
       </ul>
 
       <ul className={styles.linkList}>
         <li>
-          <MenuLink label="Политика конфиденциальности" href="#" />
+          <MenuLink label="Контакты" href="/about#contacts" />
         </li>
         <li>
-          <MenuLink label="Пользовательское соглашение" href="#" />
+          <MenuLink label="Блог" href="/about#blog" />
+        </li>
+      </ul>
+
+      <ul className={styles.linkList}>
+        <li>
+          <MenuLink label="Политика конфиденциальности" href="/about#privacy" />
+        </li>
+        <li>
+          <MenuLink label="Пользовательское соглашение" href="/about#agreement" />
         </li>
       </ul>
     </div>

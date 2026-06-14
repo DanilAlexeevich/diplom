@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { CategoryDropdown } from "../CategoryDropdown";
 import { Avatar, Button, Logo } from "@/components/ui";
@@ -28,14 +28,66 @@ export const Header: FC<HeaderProps> = ({ isLogin, user }) => {
   const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";
 
-  const isCartPage = 
-    location.pathname === "/cart"
-  
+  const isCartPage = location.pathname === "/cart";
+  const isAboutPage = location.pathname === "/about";
+
+  if (isAboutPage) {
+    return (
+      <header className={styles.header}>
+        <div className={styles.left}>
+          <Logo />
+          <nav>
+            <ul className={styles.navigation}>
+              <li className={styles.navigationList}>
+                <Link to="/about" className={styles.link}>
+                  O проекте
+                </Link>
+              </li>
+              <li className={styles.navigationList}>
+                <CategoryDropdown />
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className={styles.right}>
+          <div className={styles.cartArea}>
+            <CartIcon />
+          </div>
+          <div className={styles.authArea}>
+            {isLogin && user ? (
+              <div
+                onClick={handleClickProfile}
+                className={styles.profileContainer}
+              >
+                <a className={styles.link}>{user.name}</a>
+                <Avatar src={user.avatar} name={user.name} size="sm" />
+              </div>
+            ) : (
+              <div className={styles.buttonContainer}>
+                <Button variant="outlined" onClick={handleClickLogin}>
+                  Войти
+                </Button>
+                <Button onClick={handleClickRegister}>
+                  Зарегистрироваться
+                </Button>
+              </div>
+            )}
+          </div>
+        </div>
+      </header>
+    );
+  }
+
   if (isAuthPage) {
     return (
       <header className={`${styles.header} ${styles.headerLogin}`}>
         <div className={styles.right}>
-          <Button variant="tertiary" onClick={handleBackSpace} className={styles.mobileArrowBtn}>
+          <Button
+            variant="tertiary"
+            onClick={handleBackSpace}
+            className={styles.mobileArrowBtn}
+          >
             <span className={styles.desktopText}>
               Закрыть
               <img src={CrossIcon} alt="" className={styles.icon} />
@@ -51,45 +103,49 @@ export const Header: FC<HeaderProps> = ({ isLogin, user }) => {
   if (isCartPage) {
     return (
       <header className={styles.header}>
-      <div className={styles.left}>
-        <Logo />
-        <nav>
-          <ul className={styles.navigation}>
-            <li className={styles.navigationList}>
-              <a className={styles.link}>О проекте</a>
-            </li>
-            <li className={styles.navigationList}>
-              <CategoryDropdown />
-            </li>
-          </ul>
-        </nav>
-      </div>
+        <div className={styles.left}>
+          <Logo />
+          <nav>
+            <ul className={styles.navigation}>
+              <li className={styles.navigationList}>
+                <Link to="/about" className={styles.link}>
+                  O проекте
+                </Link>
+              </li>
+              <li className={styles.navigationList}>
+                <CategoryDropdown />
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-      <div className={styles.right}>
-        <div className={styles.cartArea}>
-          <CartIcon />
+        <div className={styles.right}>
+          <div className={styles.cartArea}>
+            <CartIcon />
+          </div>
+          <div className={styles.authArea}>
+            {isLogin && user ? (
+              <div
+                onClick={handleClickProfile}
+                className={styles.profileContainer}
+              >
+                <a className={styles.link}>{user.name}</a>
+                <Avatar src={user.avatar} name={user.name} size="sm" />
+              </div>
+            ) : (
+              <div className={styles.buttonContainer}>
+                <Button variant="outlined" onClick={handleClickLogin}>
+                  Войти
+                </Button>
+                <Button onClick={handleClickRegister}>
+                  Зарегистрироваться
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
-        <div className={styles.authArea}>
-          {isLogin && user ? (
-            <div
-              onClick={handleClickProfile}
-              className={styles.profileContainer}
-            >
-              <a className={styles.link}>{user.name}</a>
-              <Avatar src={user.avatar} name={user.name} size="sm" />
-            </div>
-          ) : (
-            <div className={styles.buttonContainer}>
-              <Button variant="outlined" onClick={handleClickLogin}>
-                Войти
-              </Button>
-              <Button onClick={handleClickRegister}>Зарегистрироваться</Button>
-            </div>
-          )}
-        </div>
-      </div>
-    </header>
-    )
+      </header>
+    );
   }
   return (
     <header className={styles.header}>
@@ -98,7 +154,9 @@ export const Header: FC<HeaderProps> = ({ isLogin, user }) => {
         <nav>
           <ul className={styles.navigation}>
             <li className={styles.navigationList}>
-              <a className={styles.link}>О проекте</a>
+              <Link to="/about" className={styles.link}>
+                O проекте
+              </Link>
             </li>
             <li className={styles.navigationList}>
               <CategoryDropdown />

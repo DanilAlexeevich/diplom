@@ -13,6 +13,7 @@ import { Header } from "../Header";
 import ProfilePage from "@/pages/profile-page";
 
 import { Toaster } from "react-hot-toast";
+import AboutPage from "@/pages/about-page";
 
 const CatalogPage = lazy(() => import("@/pages/catalog-page"));
 const LoginPage = lazy(() => import("@/pages/login-page"));
@@ -55,6 +56,7 @@ export default function App() {
                   <Route path="/login" element={<LoginPage />} />
                   <Route path="/register" element={<RegisterPage />} />
                   <Route path="/cart" element={<CartPage />} />
+                  <Route path="/about" element={<AboutPage />} />
                   <Route element={<ProtectedRoute />}>
                     <Route path="/profile" element={<ProfilePage />} />
                   </Route>

@@ -1,0 +1,35 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  background-color: var(--color-surface);
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.aboutText {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.subtitle {
+  font-weight: 600;
+}
+
+.list {
+  margin: 0 0 24px;
+  padding-left: 24px;
+
+  li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+}
+
