@@ -31,6 +31,16 @@
   font-size: var(--font-size-caption);
 }
 
+.eyeCont {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  bottom: 35%;
+  left: 20%;
+}
+
 .loginLink {
   display: block;
   text-align: center;

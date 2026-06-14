@@ -179,7 +179,7 @@ export default function RegisterPage() {
                   value={formValues.email}
                   onChange={handleInputChange("email")}
                   onBlur={handleBlur("email")}
-                  autoComplete="email" 
+                  autoComplete="email"
                 />
               </InputBaseContainerUI>
 
@@ -188,30 +188,26 @@ export default function RegisterPage() {
                 id="password"
                 error={errors.password || authError}
                 hint="Не менее 6 символов"
+                className={styles.eyeCont}
               >
-                <div className={authStyles.passwordField}
-                  onClick={() => document.getElementById('password')?.focus()}
-                >
-                  <InputUI
-                    id="password"
-                    name="password"
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Придумайте пароль"
-                    value={formValues.password}
-                    onChange={handleInputChange("password")}
-                    onBlur={handleBlur("password")}
-                    autoComplete="new-password" 
-                  />
-                  <IconButton
-                    type="button"
-                    iconSrc={showPassword ? eyeSlashIcon : eyeIcon}
-                    ariaLabel={
-                      showPassword ? "Скрыть пароль" : "Показать пароль"
-                    }
-                    onClick={() => setShowPassword((prev) => !prev)}
-                  />
-                </div>
+                <InputUI
+                  id="password"
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Придумайте пароль"
+                  value={formValues.password}
+                  onChange={handleInputChange("password")}
+                  onBlur={handleBlur("password")}
+                  autoComplete="new-password"
+                />
               </InputBaseContainerUI>
+              <IconButton
+                type="button"
+                iconSrc={showPassword ? eyeIcon : eyeSlashIcon}
+                ariaLabel={showPassword ? "Скрыть пароль" : "Показать пароль"}
+                onClick={() => setShowPassword((prev) => !prev)}
+                className={styles.eye}
+              />
             </div>
 
             <Button
