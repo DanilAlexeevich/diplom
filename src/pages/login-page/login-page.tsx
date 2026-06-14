@@ -166,9 +166,7 @@ export default function LoginPage() {
           const usersData: UsersResponse = await response.json();
           baseUsers = usersData.users;
         }
-      } catch {
-        
-      }
+      } catch {}
 
       const rawRegisteredUsers = localStorage.getItem("registered_users");
       const registeredUsers: AuthUserFromJson[] = rawRegisteredUsers
@@ -193,7 +191,7 @@ export default function LoginPage() {
         id: user.id,
         name: user.name,
         userAvatar: user.userAvatar,
-        email: user.email
+        email: user.email,
       };
       setToken(`mock-token-${user.id}`);
       setStoredUser(authUser);
@@ -227,7 +225,6 @@ export default function LoginPage() {
           className={`${authStyles.formSection} ${styles.formSectionLogin}`}
           aria-label="Форма входа"
         >
-
           <div className={styles.authBlock}>
             <form
               className={authStyles.formContainer}
@@ -256,26 +253,15 @@ export default function LoginPage() {
                   id="password"
                   error={errors.password || authError}
                 >
-                  <div className={authStyles.passwordField}>
-                    <InputUI
-                      id="password"
-                      name="password"
-                      type={showPassword ? "text" : "password"}
-                      placeholder="Введите ваш пароль"
-                      value={formValues.password}
-                      onChange={handleInputChange("password")}
-                      onBlur={handleBlur("password")}
-                    />
-
-                    <IconButton
-                      type="button"
-                      iconSrc={showPassword ? eyeSlashIcon : eyeIcon}
-                      ariaLabel={
-                        showPassword ? "Скрыть пароль" : "Показать пароль"
-                      }
-                      onClick={togglePassword}
-                    />
-                  </div>
+                  <InputUI
+                    id="password"
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Введите ваш пароль"
+                    value={formValues.password}
+                    onChange={handleInputChange("password")}
+                    onBlur={handleBlur("password")}
+                  />
                 </InputBaseContainerUI>
               </div>
 

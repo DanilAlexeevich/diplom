@@ -188,7 +188,6 @@ export default function RegisterPage() {
                 id="password"
                 error={errors.password || authError}
                 hint="Не менее 6 символов"
-                className={styles.eyeCont}
               >
                 <InputUI
                   id="password"
@@ -201,13 +200,6 @@ export default function RegisterPage() {
                   autoComplete="new-password"
                 />
               </InputBaseContainerUI>
-              <IconButton
-                type="button"
-                iconSrc={showPassword ? eyeIcon : eyeSlashIcon}
-                ariaLabel={showPassword ? "Скрыть пароль" : "Показать пароль"}
-                onClick={() => setShowPassword((prev) => !prev)}
-                className={styles.eye}
-              />
             </div>
 
             <Button
