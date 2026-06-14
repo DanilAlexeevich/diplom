@@ -179,6 +179,7 @@ export default function RegisterPage() {
                   value={formValues.email}
                   onChange={handleInputChange("email")}
                   onBlur={handleBlur("email")}
+                  autoComplete="email" 
                 />
               </InputBaseContainerUI>
 
@@ -199,6 +200,7 @@ export default function RegisterPage() {
                     value={formValues.password}
                     onChange={handleInputChange("password")}
                     onBlur={handleBlur("password")}
+                    autoComplete="new-password" 
                   />
                   <IconButton
                     type="button"
